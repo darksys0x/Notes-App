@@ -1,5 +1,5 @@
 # Notes-App
-### Notes-App bace nodeJs to add, remove and list your dealy Notes thruoh commendLine termnel or powerShell 
+### Notes-App developed by NodeJs It functions as a service for making short text notes, remove and list your dealy Notes thruoh commendLine termnel or powerShell 
 
 # Debendencses 
  - npm package 
@@ -10,4 +10,4 @@
  - add note
  ```
  node app.js add 
- 
+
