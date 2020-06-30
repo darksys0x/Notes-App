@@ -1,5 +1,5 @@
-# Notes-App
-![Alt text](https://previews.123rf.com/images/vectorgalaxy/vectorgalaxy1808/vectorgalaxy180815623/107485926-notes-vector-icon-isolated-on-transparent-background-notes-logo-concept.jpg?raw=true "Title")
+<p align = "center"# Notes-App </p>
+
 <p align="center">
   <img width="460" height="300" src="https://previews.123rf.com/images/vectorgalaxy/vectorgalaxy1808/vectorgalaxy180815623/107485926-notes-vector-icon-isolated-on-transparent-background-notes-logo-concept.jpg">
 </p>
