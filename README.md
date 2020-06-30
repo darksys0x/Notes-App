@@ -9,5 +9,5 @@
  # usage 
  - add note
  ```
- node app.js add 
+ node app.js add --title="title note" --body="contain note"
 
