@@ -1,6 +1,8 @@
-const r = require("./notes.js");
+
 const chalk = require("chalk");
 const yargs = require("yargs");
+const notes = require ("./notes.js");
+
 
 
 //print deatiel process 
@@ -23,15 +25,29 @@ const cheackIt = chalk.green.bold.inverse("Success");
 yargs.command({
     command : "add",
     describe : "add new note",
-    handler : function(){
-        console.log("added your note")
+    builder : {
+            title : {
+                describe : "if you want to add new note, you have use title of note",
+                demandOptipn : true,
+                type : true,
+            },
+            body : {
+                describe : "add contain of note ",
+                demandOptipn : true,
+                type : 'string' 
+            },
+
+    },
+    handler : argv => {
+        notes.addNote(argv.title, argv.body)
+    
     }
 });
-console.log(yargs.argv);
+
+yargs.parse();
 
 
-
-
+//**** */ console.log(process.argv) *****
 
 
 
