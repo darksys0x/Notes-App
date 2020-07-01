@@ -1,18 +1,47 @@
 const fs = require ('fs');
 
 
+
 const gtFun = function(){
     console.log("testApp");
 
 }
+// let mm = [];
 const addNote = function(title,body){
     const notes = loadNote();
    // console.log(notes)
+
+   const duplicate = notes.filter(note => {
+       return note.title === title;
+   })
+
+
+   //check if you have duplicate title ??
+   if(duplicate.length === 0){
     notes.push({
         title : title,
         body : body
     })
+    console.log("DONE !!")
+
+     saveNote(notes);
+
+   }else{
+       console.log("title note is token !!");
+   }
+ 
+        
+   
     
+
+
+}
+// console.log(mm)
+
+//save note 
+const saveNote = function(notes){
+    const dataJson = JSON.stringify(notes);
+    fs.writeFileSync('notes.json',dataJson);
 }
 
 
@@ -23,11 +52,12 @@ const addNote = function(title,body){
 //load exist note
 const loadNote = function(){
       try{
-          const dataBuffer = fs.readfilesync('notes.json');
+          const dataBuffer = fs.readFileSync('notes.json');
           const DataJson = dataBuffer.toString();
+          console.log(DataJson);
           return JSON.parse(DataJson);
       }catch (e){
-          return [];
+          return [];//when the notes is empety
       }
 }
 
