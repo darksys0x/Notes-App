@@ -1,4 +1,5 @@
 const fs = require ('fs');
+const chalk = require('chalk');
 
 
 
@@ -22,12 +23,12 @@ const addNote = function(title,body){
         title : title,
         body : body
     })
-    console.log("DONE !!")
+    console.log(chalk.green.inverse("Greet is DONE !!"));
 
      saveNote(notes);
 
    }else{
-       console.log("title note is token !!");
+       console.log(chalk.red.inverse("title note is token !!"));
    }
  
         
