@@ -30,14 +30,17 @@ const addNote = function(title,body){
    }else{
        console.log(chalk.red.inverse("title note is token !!"));
    }
- 
-        
-   
-    
-
-
 }
 // console.log(mm)
+
+//remove
+const removNote = title =>{
+    const getNotes = loadNote();
+    const cheakN = getNotes.filter(note => {
+        return note.title !== title;
+    })
+    saveNote(cheakN);
+}
 
 //save note 
 const saveNote = function(notes){
@@ -66,6 +69,7 @@ const loadNote = function(){
 
 module.exports = {
     gtFun : gtFun,
-    addNote : addNote
+    addNote : addNote,
+    removNote : removNote
 }
 

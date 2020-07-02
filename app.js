@@ -5,6 +5,7 @@ const notes = require ("./notes.js");
 
 
 
+
 //print deatiel process 
 //console.log(process.argv);
 
@@ -16,7 +17,6 @@ yargs.version("1.1.0")
 
 
 const cheackIt = chalk.green.bold.inverse("Success");
-
 
 
 //
@@ -43,6 +43,24 @@ yargs.command({
     
     }
 });
+
+//2 REMOVE 
+yargs.command({
+    command : 'remove',
+    describe : 'delete any note exist',
+    builder : {
+        title :{
+           
+            describe : 'remove note',
+            demandOptipn : true,
+            type : 'string',
+        },
+    },
+    handler : function(argv){
+        return notes.removNote(argv.title);
+    }
+    
+})
 
 yargs.parse();
 
