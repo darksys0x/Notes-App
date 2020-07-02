@@ -39,6 +39,15 @@ const removNote = title =>{
     const cheakN = getNotes.filter(note => {
         return note.title !== title;
     })
+
+        if(cheakN.length < getNotes.length){
+            console.log(chalk.green.bold.inverse('Note removed !'));
+
+        }else{
+            console.log(chalk.red.bold.inverse("not Note found !!"))
+        }
+
+
     saveNote(cheakN);
 }
 
