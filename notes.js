@@ -12,9 +12,7 @@ const addNote = function(title,body){
     const notes = loadNote();
    // console.log(notes)
 
-   const duplicate = notes.filter(note => {
-       return note.title === title;
-   })
+   const duplicate = notes.filter(note => {note.title === title;})
 
 
    //check if you have duplicate title ??
@@ -74,12 +72,24 @@ const loadNote = function(){
           return [];//when the notes is empety
       }
 }
+counter = 0;
+const listNotes = function(title){
+    const notes = loadNote();
+    const printout = notes.forEach(element => {
+        counter++
+        console.log(`${counter}: ${chalk.green(element.title)}`);
+    });
+    if(counter >1){
+        console.log("no list");
+    }
+}
 
 
 
 module.exports = {
     gtFun : gtFun,
     addNote : addNote,
-    removNote : removNote
+    removNote : removNote,
+    listNotes : listNotes
 }
 
