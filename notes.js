@@ -21,9 +21,10 @@ const addNote = function(title,body){
         title : title,
         body : body
     })
-    console.log(chalk.green.inverse("Greet is DONE !!"));
+ 
 
      saveNote(notes);
+     console.log(chalk.green.inverse("Greet is DONE !!"));
 
    }else{
        console.log(chalk.red.inverse("title note is token !!"));
@@ -66,7 +67,7 @@ const loadNote = function(){
       try{
           const dataBuffer = fs.readFileSync('notes.json');
           const DataJson = dataBuffer.toString();
-          console.log(DataJson);
+        //   console.log(DataJson);
           return JSON.parse(DataJson);
       }catch (e){
           return [];//when the notes is empety
@@ -84,12 +85,24 @@ const listNotes = function(title){
     }
 }
 
+//readNote
+const readNote = title => {
+    const notes = loadNote();
+    const note = notes.find(element => element.title === title);
+    if(!note){
+        console.log(chalk.red.inverse('note not found'));
+    }else{
+        console.log(chalk.green.inverse(note.title));
+        console.log(note.body);
+    }
+}
 
 
 module.exports = {
     gtFun : gtFun,
     addNote : addNote,
     removNote : removNote,
-    listNotes : listNotes
+    listNotes : listNotes,
+    readNote : readNote
 }
 

@@ -18,4 +18,21 @@
  - add note
  ```
  node app.js add --title="title note" --body="contain note"
+ ```
+ - read note 
+ ```
+ node app.js add --title="title
+ ```
+ - delete note
+ ```
+  node app.js remove --title="title note"
+  ```
+  - list note
+  ```
+  node app.js list 
+  ```
+  
+
+ 
+
 
