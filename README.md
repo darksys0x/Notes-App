@@ -1,6 +1,6 @@
 # Notes-App
 
-### Notes-App that were developed by NodeJs, which has function as handle and preform to create a short text notes, remove notes and list a dealy Notes through the commandLine terminal or powerShell commands too. 
+### Notes-App that was developing by NodeJs platform, which has a multi function as handle and preform to create a short text notes, remove notes and list a dealy Notes through the commandLine terminal or powerShell commands too. 
 
 
 <p align="center">
